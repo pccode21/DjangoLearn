@@ -1,6 +1,7 @@
 from django.shortcuts import render
 import datetime
 from django.shortcuts import HttpResponse
+from MyApp import models
 
 
 # Create your views here.
@@ -18,6 +19,16 @@ def index(request):
     current_time = datetime.datetime.now()
     html = '<html><head></head><body><h1> %s </h1><p> %s </p></body></html>'%(s, current_time)
     return HttpResponse(html)
+
+
+def playstudents(request):
+    if request.method == 'POST':
+        name = request.POST.get('name', None)
+        age = request.POST.get('age', None)
+        print(name, age)
+        models.Student.objects.create(name == name, age == age)
+    students = models.Student.objects.all()
+    return render(request, 'index.html', {'data': students})
 
 
 def showstudents(request):

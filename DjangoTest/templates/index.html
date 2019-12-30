@@ -6,6 +6,30 @@
   </head>
   <body>
     <h1>Hello World</h1>
+    <h2>用户输入</h2>
+    <form action="" method="post">
+      <input type="text" name="name">
+      <input type="text" name="age">
+      <input type="submit" value="提交">
+    </form>
+    <hr>
+    <h1>数据显示</h1>
+    <table border="1">
+      <thead>
+        <th>id</th>
+        <th>姓名</th>
+        <th>年龄</th>
+      </thead>
+      <tbody>
+        {% for line in data %}
+        <tr>
+          <td>{{ line.id }}</td>
+          <td>{{ line.name }}</td>
+          <td>{{ line.age }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
     <ul>
       {% for student in students %}
       <li>
