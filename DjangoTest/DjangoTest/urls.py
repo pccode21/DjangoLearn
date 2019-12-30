@@ -22,6 +22,6 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     # 自定义的路由
     url(r'^$', views.index),
-    url(r'^playstudents$', views.playstudents),
+    url(r'^students/$', views.Students),
     url(r'^showstudents$', views.showstudents),
 ]

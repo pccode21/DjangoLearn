@@ -21,14 +21,14 @@ def index(request):
     return HttpResponse(html)
 
 
-def playstudents(request):
+def Students(request):
     if request.method == 'POST':
         name = request.POST.get('name', None)
         age = request.POST.get('age', None)
         print(name, age)
-        models.Student.objects.create(name == name, age == age)
-    students = models.Student.objects.all()
-    return render(request, 'index.html', {'data': students})
+        models.Student.objects.create(name=name, age=age)
+        list = models.Student.objects.all()
+    return render(request, 'index.html', {'data': list})
 
 
 def showstudents(request):
