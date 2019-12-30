@@ -5,6 +5,7 @@
     <title>我的第一个Django项目</title>
   </head>
   <body>
+    <div>
     <h1>插入数据</h1>
     <form action="/students/" method="post">{% csrf_token %}
       <input type="text" name="name">
@@ -12,6 +13,8 @@
       <input type="submit" value="提交">
     </form>
     <hr>
+    </div>
+    <div>
     <h1>数据显示</h1>
     <table border="1">
       <thead>
@@ -29,6 +32,9 @@
         {% endfor %}
       </tbody>
     </table>
+    <hr>
+    </div>
+        <div>
     <ul>
       {% for student in students %}
       <li>
@@ -36,5 +42,6 @@
       </li>
       {% endfor %}
     </ul>
+        </div>
   </body>
 </html>
