@@ -30,22 +30,40 @@ def Students(request):
         name = request.POST.get('name', None)
         age = request.POST.get('age', None)
         print(name, age)
-        models.Student.objects.create(name=name, age=age)
+        stu = models.Student.objects.create(name=name, age=age)
+        stu.save()
         listStudents = models.Student.objects.all()
     return render(request, 'index.html', {'data': listStudents})
 
 
 def deleteUpdata(request):
-    result = {}
+    del_result = {}
     if request.method == 'POST' and request.POST:
         name = request.POST.get('name')
         nameIndb = models.Student.objects.filter(name=name).first()
         if nameIndb:
             nameIndb.delete()
-            result['statu'] = 'success'
+            del_result['statu'] = 'success'
         else:
-            result['statu'] = 'error'
-    return render(request, 'delete.html', {'result': result})
+            del_result['statu'] = 'error'
+    return render(request, 'index.html', {'del_result': del_result})
+
+
+def changeUpdata(request):
+    change_result = {}
+    dbData = models.Student.objects.all()
+    change_result['data'] = dbData
+    if request.method == 'POST' and request.POST:
+        name = request.POST.get('name')
+        nameIndb = models.Student.objects.filter(name=name).first()
+        if nameIndb:
+            nameIndb.name = request.POST.get('name')
+            nameIndb.age = request.POST.get('age')
+            nameIndb.save()
+            change_result['statu'] = 'success'
+        else:
+            change_result['statu'] = 'error'
+    return render(request, 'index.html', {'change_result': change_result})
 
 
 def showstudents(request):

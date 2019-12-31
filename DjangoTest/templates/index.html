@@ -7,10 +7,10 @@
   <body>
     <div>
     <h1>插入数据</h1>
-    <form action="/students/" method="post">{% csrf_token %}
+    <form id="Students" action="/students/" method="post">{% csrf_token %}
       <input type="text" name="name">
-      <input type="text" name="age">
-      <input type="submit" value="提交">
+      <input type="number" name="age">
+      <input type="submit" name="Students" value="提交">
     </form>
     <hr>
     </div>
@@ -33,6 +33,35 @@
       </tbody>
     </table>
     <hr>
+    </div>
+    <div>
+      <form id="deleteUpdata" action="/deleteStudents/" method="post">{% csrf_token %}
+        <label for="name">请输入姓名：</label>
+        <input type="text" name="name" style="width:105px">
+        <input type="reset" value="重置">
+        <input type="submit" name="deleteUpdata" value="删除">
+        {% if del_result.statu == 'success' %}
+        <p>{{nameIndb}}删除成功</p>
+        {% elif del_result.statu == 'error' %}
+        <p>查无此人</p>
+        {% endif %}
+      </form>
+      <hr>
+    </div>
+    <div>
+      <form id="changeStudents" action="/changeStudents/" method="post">{% csrf_token %}
+        <label for="name">请输入姓名：</label>
+        <input type="text" name="name" style="width:105px">
+        <label for="age">请输入年龄：</label>
+        <input type="number" name="age" style="width:95px">
+        <input type="reset" value="重置">
+        <input type="submit" name="changeStudents" value="修改">
+        {% if change_result.statu == 'success' %}
+        <p style="width:100%;text-align:center;color:green">修改成功！</p>
+        {% elif change_result.statu == 'error' %}
+        <p>查无此人</p>
+        {% endif %}
+      </form>
     </div>
         <div>
     <ul>

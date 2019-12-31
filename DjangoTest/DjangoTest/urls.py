@@ -13,16 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# from django.contrib import admin
+from django.contrib import admin
 from django.conf.urls import url
 from MyApp import views
 
 urlpatterns = [
     # admin后台的路由，先注释
-    # path('admin/', admin.site.urls),
+    # 超级管理员用户名：admin
+    url('admin/', admin.site.urls),
     # 自定义的路由
     url(r'^$', views.index),
     url(r'^deleteStudents/$', views.deleteUpdata),
+    url(r'^changeStudents/$', views.changeUpdata),
     url(r'^students/$', views.Students),
     url(r'^showstudents$', views.showstudents),
 ]
