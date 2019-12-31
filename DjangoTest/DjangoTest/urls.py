@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^deleteStudents/$', views.deleteUpdata),
     url(r'^changeStudents/$', views.changeUpdata),
     url(r'^students/$', views.Students),
+    url(r'^showData/$', views.showData),
     url(r'^showstudents$', views.showstudents),
 ]

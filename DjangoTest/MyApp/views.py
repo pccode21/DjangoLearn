@@ -32,7 +32,11 @@ def Students(request):
         print(name, age)
         stu = models.Student.objects.create(name=name, age=age)
         stu.save()
-        listStudents = models.Student.objects.all()
+    return render(request, 'index.html')
+
+
+def showData(request):
+    listStudents = models.Student.objects.all()
     return render(request, 'index.html', {'data': listStudents})
 
 
