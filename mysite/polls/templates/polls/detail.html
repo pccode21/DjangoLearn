@@ -12,6 +12,7 @@
       {% for choice in question.choice_set.all %}
       <input type="radio" name="choice" value="{{ choice.id }}" id="choice{{ forloop.counter }}">
       <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+      <!--内置标签 for循环设置循环中可用的变量forloop.counter指示for标签经过其循环的次数-->
       <br>
       {% endfor %}
       <input type="submit" value="Vote">

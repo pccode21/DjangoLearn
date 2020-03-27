@@ -1,0 +1,10 @@
+li a{
+    color: red;
+}
+body{
+    background: white url('images/forest-trees.jpeg') no-repeat;
+    height:100%;
+    width:100%;
+    overflow: hidden;
+    background-size:100%;
+}
