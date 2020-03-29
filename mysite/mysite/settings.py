@@ -55,7 +55,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # DIRS是加载Django模板时要检查的文件系统目录的列表；这是一个搜索路径。
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # 数据库的类型
         'NAME': 'mysite_db',  # 所使用的的数据库的名字
         'USER': 'root',  # 数据库服务器的用户
-        'PASSWORD': 'lxd05230708',  # 密码
+        'PASSWORD': 'Lxd05230708',  # 密码
         'HOST': 'localhost',  # 主机
         'PORT': '3306',  # 端口
     }
