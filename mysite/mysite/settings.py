@@ -84,6 +84,8 @@ DATABASES = {
         'PASSWORD': 'admin',  # 密码
         'HOST': 'localhost',  # 主机
         'PORT': '3306',  # 端口
+        'CHARSET': 'utf8',
+        'TIME_ZONE': 'Asia/Shanghai'
     }
 }
 
@@ -110,7 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
+
+TIME_ZONE = 'Asia/Shanghai'
 
 TIME_ZONE = 'UTC'
 
