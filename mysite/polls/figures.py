@@ -1,19 +1,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def plot_line():
+def plot_line_sine():
     fig = plt.figure()
-    ax = fig.add_subplot(121)
-    ax.plot([1,2,3,4], [4,5,2,1])
-    return fig
-
-
-def plot_sine():
-    fig = plt.figure()
-    ax = fig.add_subplot(122)
+    ax1 = fig.add_subplot(121)
+    ax1.plot([1,2,3,4], [4,5,2,1])
+    ax2 = fig.add_subplot(122)
     x = np.linspace(0, 2 * np.pi, 100)
     y = np.sin(x)
-    ax.plot(x, y)
+    ax2.plot(x, y)
     return fig
 
 

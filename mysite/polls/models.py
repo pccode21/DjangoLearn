@@ -31,12 +31,10 @@ class Choice(models.Model):
 
 
 class FigureModel(models.Model):
-    # Plot piecewise line
-    line_plot = MatplotlibFigureField(figure='plot_line',
-                                      verbose_name='Line', silent=True)
-    # Plot sine function
-    sine_plot = MatplotlibFigureField(figure='plot_sine',
-                                      verbose_name='Sine', silent=True)
+    # Plot piecewise line adn sine
+    plot_line_sine = MatplotlibFigureField(figure='plot_line_sine',
+                                      verbose_name='Line_and_Sine', silent=True)
+
     # Imshow demo
     imshow_demo = MatplotlibFigureField(figure='image_plot',
                                         verbose_name='Imshow demo', silent=True)
