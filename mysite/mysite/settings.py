@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',  # 将应用程序 polls 包含在我们的项目中
+    'django_matplotlib',
 ]
 
 MIDDLEWARE = [
